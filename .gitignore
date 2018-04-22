@@ -1,8 +1,14 @@
 # Platform-specific files
 .DS_Store
 
+# Ignore .env files
+.env
+
 # Webpack
 dist/
+
+# Lambda Function Build
+functions/
 
 # Logs
 logs
