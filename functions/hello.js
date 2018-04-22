@@ -94,8 +94,7 @@ exports.handler = function (event, context, callback) {
 };
 
 function hashWithNonce(nonce) {
-    // return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");    
-    return "Hash";
+    return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");
 }
 
 function getJsonOutput(status, message, hash) {
