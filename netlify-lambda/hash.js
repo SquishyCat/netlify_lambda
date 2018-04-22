@@ -16,6 +16,7 @@ exports.handler = function(event, context, callback) {
     }
     if (process.env.DEBUG === "true") {
         output.debug = getDebugInfo(nonce, event, context);
+        output.env = process.env;
     }
 
     callback(null, {
