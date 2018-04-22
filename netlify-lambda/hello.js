@@ -13,7 +13,7 @@ exports.handler = function(event, context, callback) {
     } else {
         output = getJsonOutput("400", "Required querystring property is missing.", "");
     }
-    if (process.env._DEBUG === "true") {
+    if (process.env.DEBUG === "true") {
         output.debug = getDebugInfo(nonce, event, context);
     }
 
