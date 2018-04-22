@@ -1,4 +1,6 @@
-const hdrs = {
+const crypto = require('crypto');
+
+const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type"
 };
@@ -14,7 +16,7 @@ exports.handler = function(event, context, callback) {
 
     callback(null, {
         statusCode: 200,
-        headers: hdrs,
+        headers: headers,
         body: JSON.stringify(output)
     });
 }

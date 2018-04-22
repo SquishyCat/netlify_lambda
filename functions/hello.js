@@ -70,7 +70,9 @@
 "use strict";
 
 
-const hdrs = {
+const crypto = __webpack_require__(1);
+
+const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type"
 };
@@ -86,7 +88,7 @@ exports.handler = function (event, context, callback) {
 
     callback(null, {
         statusCode: 200,
-        headers: hdrs,
+        headers: headers,
         body: JSON.stringify(output)
     });
 };
@@ -103,6 +105,12 @@ function getJsonOutput(status, message, hash) {
 function getDebugInfo(nonce, event, context) {
     return { "apiKey": process.env.API_KEY, "event": event, "context": context };
 }
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = require("crypto");
 
 /***/ })
 /******/ ])));

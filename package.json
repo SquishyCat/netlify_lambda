@@ -4,6 +4,7 @@
     "description": "",
     "main": "src/index.js",
     "dependencies": {
+        "crypto": "^1.0.1",
         "netlify-lambda": "^0.4.0"
     },
     "devDependencies": {},
