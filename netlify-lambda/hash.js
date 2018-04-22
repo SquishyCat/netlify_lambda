@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+// const crypto = require('crypto');
 
 const headers = {
     "Access-Control-Allow-Origin": "*",
@@ -25,7 +25,8 @@ exports.handler = (event, context, callback) => {
 }
 
 function hashWithNonce(nonce) {
-    return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");
+    // return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");
+    return "hashWithNonce";
 }
 
 function getJsonOutput(status, message, hash) {

@@ -70,7 +70,7 @@
 "use strict";
 
 
-const crypto = __webpack_require__(1);
+// const crypto = require('crypto');
 
 const headers = {
     "Access-Control-Allow-Origin": "*",
@@ -97,7 +97,8 @@ exports.handler = (event, context, callback) => {
 };
 
 function hashWithNonce(nonce) {
-    return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");
+    // return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");
+    return "hashWithNonce";
 }
 
 function getJsonOutput(status, message, hash) {
@@ -107,12 +108,6 @@ function getJsonOutput(status, message, hash) {
 function getDebugInfo(nonce, event, context) {
     return { "apiKey": process.env.API_KEY, "event": event, "context": context };
 }
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = require("crypto");
 
 /***/ })
 /******/ ])));
