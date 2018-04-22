@@ -12,17 +12,11 @@ exports.handler = function(event, context, callback) {
         output = getJsonOutput("400", "Required querystring property is missing.", "");
     }
 
-    output = returnOutput();
-
     callback(null, {
         statusCode: 200,
         headers: hdrs,
         body: JSON.stringify(output)
     });
-}
-
-function returnOutput() {
-    return "From Output";
 }
 
 function hashWithNonce(nonce) {
