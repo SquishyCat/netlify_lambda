@@ -15,7 +15,7 @@ exports.handler = function(event, context, callback) {
     callback(null, {
         statusCode: 200,
         headers: hdrs,
-        body: ("Hello, World " + process.env.API_KEY)
+        body: output
     });
 }
 
