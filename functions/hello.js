@@ -79,17 +79,17 @@ exports.handler = function (event, context, callback) {
     let nonce = event.queryStringParameters.nonce;
     let output;
     if (nonce) {
-        // output = getJsonOutput("200", "OK", hashWithNonce(nonce));
+        output = getJsonOutput("200", "OK", hashWithNonce(nonce));
     } else {
-            // output = getJsonOutput("400", "Required querystring property is missing.", "");
-        }
+        output = getJsonOutput("400", "Required querystring property is missing.", "");
+    }
 
     output = returnOutput();
 
     callback(null, {
         statusCode: 200,
         headers: hdrs,
-        body: output
+        body: JSON.stringify(output)
     });
 };
 
@@ -97,18 +97,18 @@ function returnOutput() {
     return "From Output";
 }
 
-// function hashWithNonce(nonce) {
-//     // return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");    
-//     return "Hash";
-// }
+function hashWithNonce(nonce) {
+    // return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");    
+    return "Hash";
+}
 
-// function getJsonOutput(status, message, hash) {
-//     return { "status": status, "message": message, "hash": hash };
-// }
+function getJsonOutput(status, message, hash) {
+    return { "status": status, "message": message, "hash": hash };
+}
 
-// function getDebugInfo(nonce, event, context) {
-//     return { "apiKey": process.env.API_KEY, "event": event, "context": context };
-// }
+function getDebugInfo(nonce, event, context) {
+    return { "apiKey": process.env.API_KEY, "event": event, "context": context };
+}
 
 /***/ })
 /******/ ])));
