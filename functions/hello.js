@@ -84,7 +84,7 @@ exports.handler = function (event, context, callback) {
             // output = getJsonOutput("400", "Required querystring property is missing.", "");
         }
 
-    output = "Output";
+    output = returnOutput();
 
     callback(null, {
         statusCode: 200,
@@ -92,6 +92,10 @@ exports.handler = function (event, context, callback) {
         body: output
     });
 };
+
+function returnOutput() {
+    return "From Output";
+}
 
 // function hashWithNonce(nonce) {
 //     // return crypto.createHmac("SHA256", process.env.API_SECRET).update(nonce).digest("base64");    
