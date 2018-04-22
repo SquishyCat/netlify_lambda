@@ -2,39 +2,39 @@
 <html>
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-	<title>Insert title here</title>
-	<script type="text/javascript" src="lib/gamesparks/gamesparks-rt.js"></script>
-	<script type="text/javascript" src="lib/gamesparks/gamesparks.js"></script>
-	<script type="text/javascript" src="lib/gamesparks/gamesparks-functions.js"></script>
-	<script type="text/javascript" src="lib/gamesparks/hmac-sha256.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+    <title>OAuth Secret Hashing Micro-Service Example</title>
+    <script type="text/javascript" src="lib/gamesparks/gamesparks-rt.js"></script>
+    <script type="text/javascript" src="lib/gamesparks/gamesparks.js"></script>
+    <script type="text/javascript" src="lib/gamesparks/gamesparks-functions.js"></script>
+    <script type="text/javascript" src="lib/gamesparks/hmac-sha256.js"></script>
 
 </head>
 
 <body>
-	<p>API Key:
-		<input id="apiKey" value="y350700kX9Kt" style="position:absolute; left:150px;" />
-	</p>
-	<p style="visibility: hidden">API Credential:
-		<input id="apiCredential" />
-	</p>
-	<p>Hashing URL:
-		<input id="hashURL" size="100" value="" style="position:absolute; left:150px;" />
-	</p>
-	<p>Resulting Hash:
-		<input id="secretHash" size="60" value="" style="position:absolute; left:150px;" />
-	</p>
-	<p>User Information:
-		<br/>
-		<textarea cols="100" rows="20" id="userInfo"></textarea>
-	</p>
-	<button id="init">Initalize</button>
-	<button id="register">Register</button>
-	<button id="login">Login</button>
-	<button id="account">Account Details</button>
-	<button id="custom">Custom Event</button>
-	<button id="test-rt">Test RT</button>
-	<div id="messages"></div>
+    <p>API Key:
+        <input id="apiKey" value="y350700kX9Kt" style="position:absolute; left:150px;" />
+    </p>
+    <p style="visibility: hidden">API Credential:
+        <input id="apiCredential" />
+    </p>
+    <p>Hashing URL:
+        <input id="hashURL" size="100" value="" style="position:absolute; left:150px;" />
+    </p>
+    <p>Resulting Hash:
+        <input id="secretHash" size="60" value="" style="position:absolute; left:150px;" />
+    </p>
+    <p>User Information:
+        <br/>
+        <textarea cols="100" rows="20" id="userInfo"></textarea>
+    </p>
+    <button id="init">Initalize</button>
+    <button id="register">Register</button>
+    <button id="login">Login</button>
+    <button id="account">Account Details</button>
+    <button id="custom">Custom Event</button>
+    <button id="test-rt">Test RT</button>
+    <div id="messages"></div>
 </body>
 <script type="text/javascript" src="bundle.js"></script>
 
