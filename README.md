@@ -8,8 +8,29 @@ During the initialization of an OAuth client, a key and secret must be provided 
 
 ## How we create this project
 
+### Setup Netlify
+
+Take a look [here](https://www.netlify.com/docs/functions/) for Netlify documentation on their Lambda functions.
+
+Create your deploy, as usual, but you'll also need to create environment variables. Once you've selected your deployment from your Netlify dashboard, select the **Deploys** tab, then click the **Deploy Settings** button. Scroll down to **Build environment variables**. Create 4 new variables.
+- API_KEY
+    - Value: the API key of your game/app
+- API_SECRET
+    - Value: the API seret of your game/app
+- DEBUG
+    - true | false - This will cause debug information to be attached to the JSON output of the hash function
+- LAMBDA_ENDPOINT
+    - this is the full URL path, not including the endpoint, itself. For instance: https://mygame.netlify.com/.netlify/functions/. The `.js` will append the appropriate function and querystrings. As we may put in more functions, we want this to be generic. Also, .netlify/functions/ is the default location for lambda functions on Netlify.
+
 ### netlify.toml
-The netlify.toml is a way for us to define the deployment settings for Netlify. These setting will override corresponding settings in the Netlify site.
+The netlify.toml is a way for us to define the deployment settings for Netlify. These setting will override corresponding settings in the Netlify site. Here is a simple one:
+```
+[build]
+    command = "npm run build"
+    publish = "dist"
+    functions = "functions"
+```
+These echo the settings that you might manually set in the web interface of your deployment. **Command** is the build command to run, **publish** is the directory from which to serve your site, and **functions** points to the directory where the compiled lambda functions will be served from.
 
 ### netlify-lambda
 ```
