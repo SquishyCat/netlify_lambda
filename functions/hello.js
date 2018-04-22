@@ -84,10 +84,12 @@ exports.handler = function (event, context, callback) {
             // output = getJsonOutput("400", "Required querystring property is missing.", "");
         }
 
+    output = "Output";
+
     callback(null, {
         statusCode: 200,
         headers: hdrs,
-        body: "Hello There"
+        body: output
     });
 };
 
